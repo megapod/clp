@@ -19,7 +19,6 @@ export default function Home() {
           </h2>
           <p className="text-center text-gray-700 mb-6">
             You’re not alone. Connection Lines is here to support you through the toughest moments after a breakup.
-            No pressure, no judgment – just quiet support.
           </p>
           <div className="flex justify-center">
             <a
@@ -30,26 +29,6 @@ export default function Home() {
             </a>
           </div>
         </section>
-
-        <section className="w-full max-w-2xl space-y-6 text-center mb-12">
-          <h2 className="text-xl font-semibold">How it works</h2>
-          <p>
-            You’ll get access to a calm, supportive daily tool – designed to hold your hand after a breakup.
-          </p>
-          <p>
-            Meet Ayala – a gentle, guided space that helps you reflect and heal. Slowly. Quietly. At your own pace.
-          </p>
-        </section>
-
-        <section className="w-full max-w-2xl space-y-4 text-center">
-          <h2 className="text-xl font-semibold">Common questions</h2>
-          <p><strong>Do I need therapy for this?</strong><br/>Nope. It’s a soft, supportive tool – not therapy.</p>
-          <p><strong>Is it private?</strong><br/>Completely. No tracking. No judging. No pushing.</p>
-        </section>
-
-        <footer className="mt-16 text-sm text-gray-500 text-center">
-          <p>Need help? <a className="underline" href="https://shop.connection-lines.com/contact">Contact Support</a></p>
-        </footer>
       </main>
     </>
   );
