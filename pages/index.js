@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import PayhipButton from '../components/PayhipButton';
@@ -15,7 +14,7 @@ const features = [
 const termsHtml = `
 <ol class="list-decimal pl-4 space-y-4">
 <li><strong>What We Are (and Aren’t)</strong><br/>
-Connection Lines is a digital product that offers text‑based emotional presence through AI‑generated companions, Ella and Sam.<br/>
+Connection Lines is a digital product that offers text-based emotional presence through AI-generated companions, Ella and Sam.<br/>
 <ul class="list-disc pl-5">
 <li>This is <strong>not</strong> therapy, not a crisis line, and not a replacement for professional mental‑health care.</li>
 <li>We do <strong>not</strong> offer medical advice, diagnosis, or treatment of any kind.</li>
@@ -30,16 +29,11 @@ This space is open to adults (18+) who need quiet emotional support.<br/>
 
 <li><strong>Payment & Refunds</strong><br/>
 <ul class="list-disc pl-5">
-<li>Monthly access: <strong>$49</strong></li>
-<li>Yearly access: <strong>$470</strong> (save 20 %)</li>
+<li>Monthly access: <strong>$19.90</strong></li>
+<li>Yearly access: <strong>$199</strong> (save ~17 %)</li>
 <li>Free plan for homeless: <strong>$0</strong></li>
 </ul>
-If within the first 7 days you feel the service didn’t support you emotionally, you may request a full refund—no questions asked.
-</li>
-
-<li><strong>Your Privacy</strong><br/>
-We do not collect or store your personal conversations. Forms and optional “About Me” info are used only to personalise your experience and are never shared with third parties.
-</li>
+If within the first 7 days you feel the service didn’t support you emotionally, you may request a full refund — no questions asked.</li>
 
 <li><strong>Community Respect</strong><br/>
 You agree not to:
@@ -47,18 +41,22 @@ You agree not to:
 <li>Use the product for harassment, abuse, or impersonation</li>
 <li>Attempt to manipulate or extract content in ways not intended</li>
 <li>Resell or redistribute access to others without permission</li>
-</ul>
-</li>
+</ul></li>
 
 <li><strong>Termination & Abuse</strong><br/>
-We reserve the right to revoke access if a user violates these terms or abuses the emotional safety of the platform.
-</li>
+We reserve the right to revoke access if a user violates these terms or abuses the emotional safety of the platform.</li>
 </ol>
 `;
-const privacyHtml = `<p>We do not collect or store your personal conversations. Forms and optional “About Me” info are used only to personalize your experience, and are never shared with third parties.</p>`;
+
+const privacyHtml = `
+<p>We do not collect or store your personal conversations. Forms and optional “About Me” info are used only to personalize your experience, and are never shared with third parties.</p>
+`;
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+
   return (
     <main className="min-h-screen flex flex-col bg-lime-50 dark:bg-gray-900">
       {/* Hero */}
@@ -98,22 +96,31 @@ export default function Home() {
         <span className="not-italic font-semibold text-base mt-2 inline-block">— Tom, 27</span>
       </section>
 
-      {/* Terms */}
-      <section id="terms" className="mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10">
-        <h2 className="text-3xl font-bold mb-6 text-center">Terms of Use</h2>
-        <div className="prose prose-slate max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: termsHtml }} />
-      </section>
+      {/* Conditional Sections */}
+      {showTerms && (
+        <section id="terms" className="mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10">
+          <h2 className="text-3xl font-bold mb-6 text-center">Terms of Use</h2>
+          <div className="prose prose-slate max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: termsHtml }} />
+          <div className="text-center mt-6">
+            <button onClick={() => setShowTerms(false)} className="underline text-teal-600 dark:text-teal-400">Hide</button>
+          </div>
+        </section>
+      )}
 
-      {/* Privacy */}
-      <section id="privacy" className="mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10">
-        <h2 className="text-3xl font-bold mb-6 text-center">Privacy Policy</h2>
-        <div className="prose prose-slate max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: privacyHtml }} />
-      </section>
+      {showPrivacy && (
+        <section id="privacy" className="mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10">
+          <h2 className="text-3xl font-bold mb-6 text-center">Privacy Policy</h2>
+          <div className="prose prose-slate max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: privacyHtml }} />
+          <div className="text-center mt-6">
+            <button onClick={() => setShowPrivacy(false)} className="underline text-teal-600 dark:text-teal-400">Hide</button>
+          </div>
+        </section>
+      )}
 
       {/* Footer */}
       <footer className="py-10 text-center text-sm text-gray-500 dark:text-gray-400">
-        <a href="#privacy" className="mx-2 hover:underline">Privacy</a>
-        <a href="#terms" className="mx-2 hover:underline">Terms</a>
+        <button onClick={() => setShowPrivacy(!showPrivacy)} className="mx-2 hover:underline">Privacy</button>
+        <button onClick={() => setShowTerms(!showTerms)} className="mx-2 hover:underline">Terms</button>
         <button onClick={() => setOpen(true)} className="mx-2 hover:underline">Support</button>
         <div className="mt-4">© 2025 Connection Lines</div>
       </footer>
