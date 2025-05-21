@@ -1,3 +1,34 @@
+
+import { useState } from 'react'
+function ContactModal() {
+  const [show,setShow]=useState(false);
+  if (typeof window !== 'undefined') {
+    if (show) document.body.style.overflow='hidden';
+    else document.body.style.overflow='';
+  }
+  return (
+    <>
+      <button id="contactTrigger" className="hidden" onClick={()=>setShow(true)}></button>
+      {show && (
+        <div className="fixed inset-0 bg-black/60 z-[3000] flex items-center justify-center p-4" onClick={()=>setShow(false)}>
+          <div className="bg-white w-full max-w-md rounded-2xl overflow-hidden" onClick={e=>e.stopPropagation()}>
+            <iframe src="https://shop.connection-lines.com/contact?embedded=true" className="w-full h-[520px]" onError={()=>{window.open('https://shop.connection-lines.com/contact','_blank');setShow(false);}} sandbox="allow-forms allow-same-origin"></iframe>
+            <button className="absolute top-2 right-2 text-gray-500" onClick={()=>setShow(false)}>✕</button>
+          </div>
+        </div>
+      )}
+      <script dangerouslySetInnerHTML={{__html:`
+        document.addEventListener('DOMContentLoaded',function(){
+          const link=document.getElementById('contactLink');
+          if(link){
+            link.addEventListener('click',function(e){e.preventDefault();document.getElementById('contactTrigger').click();});
+          }
+        });
+      `}}/>
+    <ContactModal/></>
+  )
+}
+
 import NestedAccordion from '../components/NestedAccordion'
 
 import Image from 'next/image'
@@ -6,7 +37,7 @@ export default function Home() {
     <>
       <main className="max-w-5xl mx-auto px-4">
         {/* Hero */}
-        <section className="mt-10 px-6 grid md:grid-cols-[1fr_420px] gap-14 items-center py-24 bg-gradient-to-br from-neutralbg to-accent/30 rounded-3xl p-10 md:p-20 shadow-inner">
+        <section className="mt-10 px-6 grid md:grid-cols-[1fr_420px] gap-14 items-center py-24 bg-gradient-to-br from-neutralbg to-accent/30 rounded-3xl p-10 md:p-20 shadow-inner mb-24">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-primary">You’re not broken—just overwhelmed</h1>
             <p className="mt-6 text-lg md:text-xl max-w-lg">A calm, empathetic digital companion to get you through the breakup.</p>
@@ -16,12 +47,12 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:block">
-            <Image src="/hero-phone.png" alt="Support illustration" width={600} height={400}/>
+            <img src="/hero.png" alt="AI companion illustration" className="max-w-full rounded-2xl shadow-lg"/>
           </div>
         </section>
 
         {/* Features */}
-        <section className="py-10 md:py-20 bg-white rounded-3xl shadow-inner">
+        <section className="py-20 bg-white rounded-3xl shadow-inner">
           <div className="grid md:grid-cols-[1fr_420px] gap-14 px-6 md:px-12">
             {[
               {title:'Always with You',desc:'24/7—When the heart hurts, someone’s listening.'},
@@ -43,7 +74,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-16">
+        <section className="py-20">
           <div className="bg-white max-w-2xl mx-auto p-8 rounded-3xl shadow relative before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-r before:from-secondary/30 before:to-accent/30 before:-z-10">
             <p className="text-lg italic">“After a week with Ella I finally slept through the night.”</p>
             <p className="mt-4 font-semibold">— Tom, 27</p>
@@ -57,7 +88,7 @@ export default function Home() {
         <nav className="flex justify-center gap-6">
           <a href="#legal" className="text-primary">Privacy</a>
           <a href="#legal" className="text-primary">Terms</a>
-          <a href="https://shop.connection-lines.com/contact" className="text-primary">Support</a>
+          <a href="#" id="contactLink" className="text-primary">Support</a>
         </nav>
         <p>© {new Date().getFullYear()} Connection Lines</p>
       </footer>
@@ -66,6 +97,6 @@ export default function Home() {
       <div className="md:hidden fixed bottom-0 inset-x-0 bg-secondary p-3 flex justify-center shadow-lg">
         <a href="https://payhip.com/b/FS7uM" className="payhip-buy-button text-white font-semibold" data-theme="none" data-product="FS7uM">Start Now – $19.90</a>
       </div>
-    </>
+    <ContactModal/></>
   )
 }
