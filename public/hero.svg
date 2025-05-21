@@ -1,7 +1,1 @@
-
-<svg width="400" height="280" xmlns="http://www.w3.org/2000/svg">
- <rect width="400" height="280" fill="#B4CFB0"/>
- <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="20" font-family="sans-serif">
-  Hero Illustration
- </text>
-</svg>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="400" fill="#b4cfb0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="24" font-family="sans-serif">Hero Art</text></svg>

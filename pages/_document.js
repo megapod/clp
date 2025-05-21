@@ -1,24 +1,19 @@
 
 import { Html, Head, Main, NextScript } from 'next/document'
-
 export default function Document() {
   return (
-    <Html lang="en" dir="ltr">
+    <Html lang="en">
       <Head>
-        {/* Google tag (gtag.js) */}
+        {/* Google tag */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17096797758"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17096797758');
-            `,
-          }}
-        />
+        <script dangerouslySetInnerHTML={{__html:`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17096797758');
+        `}}/>
       </Head>
-      <body>
+      <body className="bg-neutralbg text-gray-900">
         <Main />
         <NextScript />
       </body>

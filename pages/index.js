@@ -1,67 +1,69 @@
 
-import Head from 'next/head';
-
+import Image from 'next/image'
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Connection Lines – Breakup Support</title>
-        <meta name="description" content="בן‑לוויה דיגיטלי אמפתי 24/7 שיעזור לך להתמודד עם כאב הפרידה." />
-      </Head>
-      <main>
-        <section className="hero container">
-          <h1>You’re not broken—just overwhelmed</h1>
-          <h2>A calm, empathetic digital companion to get you through the breakup</h2>
-          <img src="/hero.svg" alt="Illustration: digital support" />
-          <p className="trust-bar">Powered by OpenAI • SSL Secure Checkout</p>
-          {/* Payhip Buy Button */}
-          <script src="https://payhip.com/payhip.js" />
-          <a href="https://shop.connection-lines.com/b/FS7uM"
-             className="payhip-buy-button cta"
-             data-theme="none"
-             data-product="FS7uM">
-             Start Now – $19.90
-          </a>
-        </section>
-
-        <section className="section container">
-          <div className="features">
-            <div className="feature">
-              <h3>Always with You</h3>
-              <p>24/7—When the heart hurts, someone’s listening.</p>
-            </div>
-            <div className="feature">
-              <h3>Private & Anonymous</h3>
-              <p>Share freely—no judgment, no exposure.</p>
-            </div>
-            <div className="feature">
-              <h3>Real Empathy</h3>
-              <p>Ella & Sam—two AI companions—offer warmth and practical insights.</p>
-            </div>
-            <div className="feature">
-              <h3>A Fresh Start</h3>
-              <p>Tools and guidance to grow from pain and rebuild your confidence.</p>
+      <main className="max-w-5xl mx-auto px-4">
+        {/* Hero */}
+        <section className="grid md:grid-cols-2 gap-10 items-center py-20">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary">You’re not broken—just overwhelmed</h1>
+            <p className="mt-6 text-lg md:text-xl max-w-lg">A calm, empathetic digital companion to get you through the breakup.</p>
+            <div className="mt-8 flex flex-col gap-4">
+              <span className="text-sm text-gray-600">Powered by OpenAI • SSL Secure Checkout</span>
+              <a href="https://shop.connection-lines.com/b/FS7uM" className="self-start bg-secondary text-white px-6 py-3 rounded-xl shadow hover:scale-105 transition-transform">Start Now – $19.90</a>
             </div>
           </div>
-        </section>
-        <section className="section container">
-          <div className="testimonial">
-            <p>“After a week with Ella I finally slept through the night.”</p>
-            <strong>— Tom, 27</strong>
+          <div className="hidden md:block">
+            <Image src="/hero.svg" alt="Support illustration" width={600} height={400}/>
           </div>
         </section>
 
+        {/* Features */}
+        <section className="py-10 md:py-20 bg-white rounded-3xl shadow-inner">
+          <div className="grid md:grid-cols-2 gap-8 px-6 md:px-12">
+            {[
+              {title:'Always with You',desc:'24/7—When the heart hurts, someone’s listening.'},
+              {title:'Private & Anonymous',desc:'Share freely—no judgment, no exposure.'},
+              {title:'Real Empathy',desc:'Ella & Sam—two AI companions—offer warmth and practical insights.'},
+              {title:'A Fresh Start',desc:'Tools and guidance to grow from pain and rebuild your confidence.'},
+            ].map(f=>(
+              <div key={f.title} className="flex gap-4">
+                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <span className="text-primary text-xl">✓</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">{f.title}</h3>
+                  <p className="text-sm mt-1">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-16">
+          <div className="bg-white max-w-2xl mx-auto p-8 rounded-3xl shadow">
+            <p className="text-lg italic">“After a week with Ella I finally slept through the night.”</p>
+            <p className="mt-4 font-semibold">— Tom, 27</p>
+          </div>
+        </section>
       </main>
 
-      <div className="sticky-cta"><a href="https://shop.connection-lines.com/b/FS7uM">Start Now – $19.90</a></div>
-      <footer>
-        <nav>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="https://shop.connection-lines.com/contact">Support</a>
+      {/* Footer */}
+      <footer className="bg-white border-t py-6 text-center text-sm space-y-2">
+        <nav className="flex justify-center gap-6">
+          <a href="#" className="text-primary">Privacy</a>
+          <a href="#" className="text-primary">Terms</a>
+          <a href="https://shop.connection-lines.com/contact" className="text-primary">Support</a>
         </nav>
-        <p>© {new Date().getFullYear()} Connection Lines • <a href="https://shop.connection-lines.com/contact">Contact</a></p>
+        <p>© {new Date().getFullYear()} Connection Lines</p>
       </footer>
+
+      {/* Sticky CTA mobile */}
+      <div className="md:hidden fixed bottom-0 inset-x-0 bg-secondary p-3 flex justify-center shadow-lg">
+        <a href="https://shop.connection-lines.com/b/FS7uM" className="text-white font-semibold">Start Now – $19.90</a>
+      </div>
     </>
-  );
+  )
 }
