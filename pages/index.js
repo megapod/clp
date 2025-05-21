@@ -64,7 +64,7 @@ export default function Home() {
       {/* Hero */}
       <section className="mx-auto max-w-4xl bg-gradient-to-br from-lime-100 to-white dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-lg p-10 md:p-20 mt-8">
         <h1 className="text-4xl md:text-6xl font-bold text-teal-700 dark:text-teal-300 mb-6">
-          You’re not broken—<br/>just overwhelmed
+          Breakups don’t define you.
         </h1>
         <p className="text-lg md:text-2xl text-gray-700 dark:text-gray-200 mb-8">
           A calm, empathetic digital companion to get you through the breakup.
