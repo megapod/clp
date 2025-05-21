@@ -2,5 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body { scroll-behavior: smooth; }
-body.dark { background-color: #111827; }
+html,body{scroll-behavior:smooth;}
+
+body.dark{background-color:#111827;}
