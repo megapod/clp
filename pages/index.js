@@ -51,7 +51,33 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
+      {
+        {/* Legal Section */}
+        <section id="legal" className="py-16 scroll-mt-20">
+          <h2 className="text-2xl font-heading text-center mb-8">Legal</h2>
+          <NestedAccordion data={[
+            {
+              title:'Privacy Policy',
+              children:[
+                {title:'What data we collect',content:'We store only anonymous usage metrics, purchase data handled by Payhip, and cookie-based analytics.'},
+                {title:'Conversations',content:'Chats are processed via OpenAI API and are not stored on our servers.'},
+                {title:'Cookies',content:'Essential cookies keep checkout secure; analytics cookies improve the product.'},
+                {title:'Your rights',content:'Contact us to access or delete personal data.'}
+              ]
+            },
+            {
+              title:'Terms of Use',
+              children:[
+                {title:'Purpose',content:'AI companion for emotional support; not therapy.'},
+                {title:'Responsibilities',content:'Do not rely for medical or legal decisions.'},
+                {title:'License',content:'Personal non-transferable license; refunds within 7 days.'},
+                {title:'Liability',content:'We are not liable for actions based on AI conversations.'}
+              ]
+            }
+          ]} />
+        </section>
+
+      /* Footer */}
       <footer className="bg-white border-t py-6 text-center text-sm space-y-2">
         <nav className="flex justify-center gap-6">
           <a href="#legal" className="text-primary">Privacy</a>
