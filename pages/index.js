@@ -55,7 +55,7 @@ We reserve the right to revoke access if a user violates these terms or abuses t
 </li>
 </ol>
 `;
-const privacyHtml = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. (Replace with full Privacy Policy.)</p>`;
+const privacyHtml = `<p>We do not collect or store your personal conversations. Forms and optional “About Me” info are used only to personalize your experience, and are never shared with third parties.</p>`;
 
 export default function Home() {
   const [open, setOpen] = useState(false);
