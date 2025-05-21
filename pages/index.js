@@ -1,3 +1,4 @@
+import NestedAccordion from '../components/NestedAccordion'
 
 import Image from 'next/image'
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:block">
-            <Image src="/hero.svg" alt="Support illustration" width={600} height={400}/>
+            <Image src="/hero.png" alt="Support illustration" width={600} height={400}/>
           </div>
         </section>
 
@@ -53,8 +54,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-white border-t py-6 text-center text-sm space-y-2">
         <nav className="flex justify-center gap-6">
-          <a href="/privacy" className="text-primary">Privacy</a>
-          <a href="/terms" className="text-primary">Terms</a>
+          <a href="#legal" className="text-primary">Privacy</a>
+          <a href="#legal" className="text-primary">Terms</a>
           <a href="https://shop.connection-lines.com/contact" className="text-primary">Support</a>
         </nav>
         <p>© {new Date().getFullYear()} Connection Lines</p>
