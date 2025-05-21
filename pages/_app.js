@@ -1,4 +1,8 @@
 
+import dynamic from 'next/dynamic'
+import { useEffect, useRef } from 'react'
+const ContactModal = dynamic(()=>import('../components/ContactModal'),{ssr:false})
+
 import '../styles/globals.css'
 
 import { useState, useEffect } from 'react'
