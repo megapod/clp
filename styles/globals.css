@@ -13,7 +13,7 @@ body {
   margin: 0;
   background: var(--neutral);
   color: var(--text);
-  direction: rtl;
+  direction: ltr;
 }
 a {
   color: inherit;

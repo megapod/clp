@@ -5,12 +5,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Connection Lines – תמיכה אחרי פרידה</title>
+        <title>Connection Lines – Breakup Support</title>
         <meta name="description" content="בן‑לוויה דיגיטלי אמפתי 24/7 שיעזור לך להתמודד עם כאב הפרידה." />
       </Head>
       <main>
         <section className="hero container">
-          <h1>אתם לא שבורים – אתם רק מוצפים</h1>
+          <h1>You’re not broken—just overwhelmed</h1>
           <h2>בן‑לוויה דיגיטלי רגוע ואמפתי שיעזור לך לצלוח את הפרידה</h2>
           {/* Payhip Buy Button */}
           <script src="https://payhip.com/payhip.js" />
@@ -25,27 +25,27 @@ export default function Home() {
         <section className="section container">
           <div className="features">
             <div className="feature">
-              <h3>תמיד אתכם</h3>
-              <p>24/7 – מתי שהלב כואב, יש מי שמקשיב.</p>
+              <h3>Always with You</h3>
+              <p>24/7—When the heart hurts, someone’s listening.</p>
             </div>
             <div className="feature">
-              <h3>בטוח ואנונימי</h3>
-              <p>כאן אפשר לשתף בלי פחד, בלי שיפוטיות וללא צורך בחשיפה.</p>
+              <h3>Private & Anonymous</h3>
+              <p>Share freely—no judgment, no exposure.</p>
             </div>
             <div className="feature">
-              <h3>אמפתיה אמיתית</h3>
-              <p>אלה וסם, שני מלווים דיגיטליים, מעניקים גם חום וגם תובנות מעשיות.</p>
+              <h3>Real Empathy</h3>
+              <p>Ella & Sam—two AI companions—offer warmth and practical insights.</p>
             </div>
             <div className="feature">
-              <h3>התחלה חדשה</h3>
-              <p>כלים והכוונה לצמוח מתוך הכאב ולבנות ביטחון בעצמך.</p>
+              <h3>A Fresh Start</h3>
+              <p>Tools and guidance to grow from pain and rebuild your confidence.</p>
             </div>
           </div>
         </section>
       </main>
 
       <footer>
-        <p>© {new Date().getFullYear()} Connection Lines • <a href="https://shop.connection-lines.com/contact">צור קשר</a></p>
+        <p>© {new Date().getFullYear()} Connection Lines • <a href="https://shop.connection-lines.com/contact">Contact</a></p>
       </footer>
     </>
   );
