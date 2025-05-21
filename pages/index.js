@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <main className="max-w-5xl mx-auto px-4">
         {/* Hero */}
-        <section className="grid md:grid-cols-2 gap-10 items-center py-24 bg-gradient-to-br from-neutralbg to-accent/30 rounded-3xl p-6 md:p-16 shadow-inner">
+        <section className="px-6 grid md:grid-cols-[1fr_420px] gap-14 items-center py-24 bg-gradient-to-br from-neutralbg to-accent/30 rounded-3xl p-10 md:p-20 shadow-inner">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-primary">You’re not broken—just overwhelmed</h1>
             <p className="mt-6 text-lg md:text-xl max-w-lg">A calm, empathetic digital companion to get you through the breakup.</p>
@@ -16,13 +16,13 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:block">
-            <Image src="/hero.png" alt="Support illustration" width={600} height={400}/>
+            <Image src="/hero-phone.png" alt="Support illustration" width={600} height={400}/>
           </div>
         </section>
 
         {/* Features */}
         <section className="py-10 md:py-20 bg-white rounded-3xl shadow-inner">
-          <div className="grid md:grid-cols-2 gap-8 px-6 md:px-12">
+          <div className="grid md:grid-cols-[1fr_420px] gap-14 px-6 md:px-12">
             {[
               {title:'Always with You',desc:'24/7—When the heart hurts, someone’s listening.'},
               {title:'Private & Anonymous',desc:'Share freely—no judgment, no exposure.'},
