@@ -96,3 +96,72 @@ footer {
 @media (min-width: 800px) {
   .hero h2 { max-width: 600px; margin: 0 auto; text-align: center; }
 }
+
+
+/* hero image */
+.hero img {
+  max-width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+
+/* trust bar */
+.trust-bar {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: #555;
+}
+
+/* social proof */
+.testimonial {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* sticky CTA for mobile */
+@media (max-width: 600px) {
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--secondary);
+    display: flex;
+    justify-content: center;
+    padding: 0.7rem 1rem;
+    z-index: 1000;
+  }
+  .sticky-cta a {
+    color: #fff;
+    font-weight: 600;
+  }
+}
+
+/* desktop two-column grid */
+@media (min-width: 900px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* footer */
+footer {
+  background: #fff;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+footer nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+footer nav a {
+  color: var(--primary);
+}
