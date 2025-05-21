@@ -2,27 +2,20 @@
 import { useEffect } from 'react';
 
 export default function PayhipButton({ children, className = '' }) {
-  // Ensure Payhip script is loaded once
   useEffect(() => {
     if (!document.querySelector('script[src="https://payhip.com/payhip.js"]')) {
-      const s = document.createElement('script');
-      s.src = "https://payhip.com/payhip.js";
-      s.async = true;
-      document.body.appendChild(s);
+      const script = document.createElement('script');
+      script.src = "https://payhip.com/payhip.js";
+      script.async = true;
+      document.body.appendChild(script);
     }
   }, []);
 
-  const handleClick = (e) => {
-    // Prevent navigation; let Payhip JS handle the modal
-    e.preventDefault();
-  };
-
   return (
     <a
-      href="https://payhip.com/b/FS7uM"
-      className={`payhip-button ${className}`}
-      data-payhip="button"
-      onClick={handleClick}
+      data-payhip-button="FS7uM"
+      href="https://shop.connection-lines.com/b/FS7uM"
+      className={className}
     >
       {children}
     </a>
