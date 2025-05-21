@@ -53,8 +53,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-white border-t py-6 text-center text-sm space-y-2">
         <nav className="flex justify-center gap-6">
-          <a href="#" className="text-primary">Privacy</a>
-          <a href="#" className="text-primary">Terms</a>
+          <a href="/privacy" className="text-primary">Privacy</a>
+          <a href="/terms" className="text-primary">Terms</a>
           <a href="https://shop.connection-lines.com/contact" className="text-primary">Support</a>
         </nav>
         <p>© {new Date().getFullYear()} Connection Lines</p>
