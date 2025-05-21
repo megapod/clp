@@ -1,1 +1,15 @@
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="400" fill="#b4cfb0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="24" font-family="sans-serif">Hero Art</text></svg>
+
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#b4cfb0" rx="32"/>
+  <!-- phone -->
+  <rect x="240" y="60" width="120" height="280" rx="24" fill="#ffffff"/>
+  <rect x="260" y="90" width="80" height="160" rx="12" fill="#f5f5f5"/>
+  <circle cx="300" cy="300" r="8" fill="#b4cfb0"/>
+  <!-- typing dots -->
+  <circle cx="285" cy="180" r="6" fill="#5b9da4"/>
+  <circle cx="300" cy="180" r="6" fill="#5b9da4"/>
+  <circle cx="315" cy="180" r="6" fill="#5b9da4"/>
+  <!-- person -->
+  <circle cx="170" cy="260" r="40" fill="#a17aa1"/>
+  <circle cx="170" cy="240" r="20" fill="#e8edca"/>
+</svg>
