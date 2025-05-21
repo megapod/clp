@@ -1,11 +1,9 @@
 
-import dynamic from 'next/dynamic'
-import { useEffect, useRef } from 'react'
+import dynamic from 'next/dynamic'import { useEffect, useRef } from 'react'
 const ContactModal = dynamic(()=>import('../components/ContactModal'),{ssr:false})
 
 import '../styles/globals.css'
 
-import { useState, useEffect } from 'react'
 function CookieBanner() {
   const [show, setShow] = useState(false)
   useEffect(()=>{ const c = localStorage.getItem('cl-cookie-ok'); if(!c) setShow(true) },[])
