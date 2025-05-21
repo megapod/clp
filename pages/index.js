@@ -64,7 +64,7 @@ export default function Home() {
 
       {/* Sticky CTA mobile */}
       <div className="md:hidden fixed bottom-0 inset-x-0 bg-secondary p-3 flex justify-center shadow-lg">
-        <a href="https://shop.connection-lines.com/b/FS7uM" className="text-white font-semibold">Start Now – $19.90</a>
+        <a href="https://payhip.com/b/FS7uM" className="payhip-buy-button text-white font-semibold" data-theme="none" data-product="FS7uM">Start Now – $19.90</a>
       </div>
     </>
   )
