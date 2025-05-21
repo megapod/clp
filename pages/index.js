@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <main className="max-w-5xl mx-auto px-4">
         {/* Hero */}
-        <section className="px-6 grid md:grid-cols-[1fr_420px] gap-14 items-center py-24 bg-gradient-to-br from-neutralbg to-accent/30 rounded-3xl p-10 md:p-20 shadow-inner">
+        <section className="mt-10 px-6 grid md:grid-cols-[1fr_420px] gap-14 items-center py-24 bg-gradient-to-br from-neutralbg to-accent/30 rounded-3xl p-10 md:p-20 shadow-inner">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-primary">You’re not broken—just overwhelmed</h1>
             <p className="mt-6 text-lg md:text-xl max-w-lg">A calm, empathetic digital companion to get you through the breakup.</p>
