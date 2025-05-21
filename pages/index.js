@@ -11,14 +11,14 @@ export default function Home() {
       <main>
         <section className="hero container">
           <h1>You’re not broken—just overwhelmed</h1>
-          <h2>בן‑לוויה דיגיטלי רגוע ואמפתי שיעזור לך לצלוח את הפרידה</h2>
+          <h2>A calm, empathetic digital companion to get you through the breakup</h2>
           {/* Payhip Buy Button */}
           <script src="https://payhip.com/payhip.js" />
           <a href="https://shop.connection-lines.com/b/FS7uM"
              className="payhip-buy-button cta"
              data-theme="none"
              data-product="FS7uM">
-             התחילו עכשיו – ‎19.90 $
+             Start Now – $19.90
           </a>
         </section>
 
