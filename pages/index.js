@@ -6,6 +6,7 @@ function ContactModal() {
     if (show) document.body.style.overflow='hidden';
     else document.body.style.overflow='';
   }
+  const [contactOpen,setContactOpen]=useState(false);
   return (
     <>
       <button id="contactTrigger" className="hidden" onClick={()=>setShow(true)}></button>
@@ -31,7 +32,12 @@ function ContactModal() {
 
 import NestedAccordion from '../components/NestedAccordion'
 
+import dynamic from 'next/dynamic'
+import { useState } from 'react'
+const ContactModal = dynamic(()=>import('../components/ContactModal'),{ssr:false})
+
 export default function Home() {
+  const [contactOpen,setContactOpen]=useState(false);
   return (
     <>
       <main className="max-w-5xl mx-auto px-4">
@@ -87,7 +93,7 @@ export default function Home() {
         <nav className="flex justify-center gap-6">
           <a href="#legal" className="text-primary">Privacy</a>
           <a href="#legal" className="text-primary">Terms</a>
-          <a href="#" id="contactLink" className="text-primary">Support</a>
+          <a onClick={()=>setContactOpen(true)} className="text-primary">Support</a>
         </nav>
         <p>© {new Date().getFullYear()} Connection Lines</p>
       </footer>
