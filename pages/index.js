@@ -1,38 +1,15 @@
 
-import { useState } from 'react'
-function ContactModal() {
-  const [show,setShow]=useState(false);
-  if (typeof window !== 'undefined') {
-    if (show) document.body.style.overflow='hidden';
-    else document.body.style.overflow='';
-  }
-  return (
-    <>
-      <button id="contactTrigger" className="hidden" onClick={()=>setShow(true)}></button>
-      {show && (
-        <div className="fixed inset-0 bg-black/60 z-[3000] flex items-center justify-center p-4" onClick={()=>setShow(false)}>
-          <div className="bg-white w-full max-w-md rounded-2xl overflow-hidden" onClick={e=>e.stopPropagation()}>
-            <iframe src="https://shop.connection-lines.com/contact?embedded=true" className="w-full h-[520px]" onError={()=>{window.open('https://shop.connection-lines.com/contact','_blank');setShow(false);}} sandbox="allow-forms allow-same-origin"></iframe>
-            <button className="absolute top-2 right-2 text-gray-500" onClick={()=>setShow(false)}>✕</button>
-          </div>
-        </div>
-      )}
-      <script dangerouslySetInnerHTML={{__html:`
-        document.addEventListener('DOMContentLoaded',function(){
-          const link=document.getElementById('contactLink');
-          if(link){
-            link.addEventListener('click',function(e){e.preventDefault();document.getElementById('contactTrigger').click();});
-          }
-        });
-      `}}/>
-    <ContactModal/></>
+
   )
 }
 
 import NestedAccordion from '../components/NestedAccordion'
 
 import Image from 'next/image'
+import { useState } from 'react'
+
 export default function Home() {
+  const [contactOpen, setContactOpen] = useState(false);
   return (
     <>
       <main className="max-w-5xl mx-auto px-4">
@@ -43,7 +20,7 @@ export default function Home() {
             <p className="mt-6 text-lg md:text-xl max-w-lg">A calm, empathetic digital companion to get you through the breakup.</p>
             <div className="mt-8 flex flex-col gap-4">
               <span className="text-sm text-gray-600">Powered by OpenAI • SSL Secure Checkout</span>
-              <a href="https://shop.connection-lines.com/b/FS7uM" className="self-start bg-secondary text-white px-6 py-3 rounded-xl shadow hover:scale-105 hover:shadow-lg transition-transform duration-150 ease-out transition-transform">Start Now – $19.90</a>
+              <a href="https://shop.connection-lines.com/b/FS7uM" className="self-start bg-secondary text-white px-6 py-3 rounded-xl shadow hover:scale-105 hover:shadow-lg transition-transform duration-150 ease-out transition-transform">Start Now – $19.90</button>
             </div>
           </div>
           <div className="hidden md:block">
@@ -86,17 +63,30 @@ export default function Home() {
         /* Footer */}
       <footer className="bg-white border-t py-6 text-center text-sm space-y-2">
         <nav className="flex justify-center gap-6">
-          <a href="#legal" className="text-primary">Privacy</a>
-          <a href="#legal" className="text-primary">Terms</a>
-          <a href="#" id="contactLink" className="text-primary">Support</a>
+          <a href="#legal" className="text-primary">Privacy</button>
+          <a href="#legal" className="text-primary">Terms</button>
+          <button className="text-primary" onClick={()=>setContactOpen(true)}>Support</button>
         </nav>
         <p>© {new Date().getFullYear()} Connection Lines</p>
       </footer>
 
       {/* Sticky CTA mobile */}
       <div className="md:hidden fixed bottom-0 inset-x-0 bg-secondary p-3 flex justify-center shadow-lg">
-        <a href="https://payhip.com/b/FS7uM" className="payhip-buy-button text-white font-semibold" data-theme="none" data-product="FS7uM">Start Now – $19.90</a>
+        <a href="https://payhip.com/b/FS7uM" className="payhip-buy-button text-white font-semibold" data-theme="none" data-product="FS7uM">Start Now – $19.90</button>
       </div>
-    <ContactModal/></>
+    <ContactModal/><ContactModal show={contactOpen} onClose={()=>setContactOpen(false)}/></>
+  )
+}
+
+
+function ContactModal({show,onClose}) {
+  if (!show) return null;
+  return (
+    <div className="fixed inset-0 bg-black/60 z-[3000] flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white w-full max-w-md rounded-2xl overflow-hidden relative" onClick={e=>e.stopPropagation()}>
+        <iframe src="https://shop.connection-lines.com/contact?embedded=true" className="w-full h-[520px]" sandbox="allow-forms allow-same-origin"/>
+        <button className="absolute top-2 right-2 text-gray-500" onClick={onClose}>✕</button>
+      </div>
+    </div>
   )
 }
