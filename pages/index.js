@@ -1,44 +1,17 @@
 
 import { useState } from 'react'
-function ContactModal() {
-  const [show,setShow]=useState(false);
-  if (typeof window !== 'undefined') {
-    if (show) document.body.style.overflow='hidden';
-    else document.body.style.overflow='';
-  }
-  const [contactOpen,setContactOpen]=useState(false);
-  return (
-    <>
-      <button id="contactTrigger" className="hidden" onClick={()=>setShow(true)}></button>
-      {show && (
-        <div className="fixed inset-0 bg-black/60 z-[3000] flex items-center justify-center p-4" onClick={()=>setShow(false)}>
-          <div className="bg-white w-full max-w-md rounded-2xl overflow-hidden" onClick={e=>e.stopPropagation()}>
-            <iframe src="https://shop.connection-lines.com/contact?embedded=true" className="w-full h-[520px]" onError={()=>{window.open('https://shop.connection-lines.com/contact','_blank');setShow(false);}} sandbox="allow-forms allow-same-origin"></iframe>
-            <button className="absolute top-2 right-2 text-gray-500" onClick={()=>setShow(false)}>✕</button>
-          </div>
-        </div>
-      )}
-      <script dangerouslySetInnerHTML={{__html:`
-        document.addEventListener('DOMContentLoaded',function(){
-          const link=document.getElementById('contactLink');
-          if(link){
-            link.addEventListener('click',function(e){e.preventDefault();document.getElementById('contactTrigger').click();});
-          }
-        });
-      `}}/>
-    <ContactModal/></>
+
   )
 }
 
 import NestedAccordion from '../components/NestedAccordion'
 
 import dynamic from 'next/dynamic'
-import { useState } from 'react'
 const ContactModal = dynamic(()=>import('../components/ContactModal'),{ssr:false})
 
 export default function Home() {
   const [contactOpen,setContactOpen]=useState(false);
-  return (
+    return (
     <>
       <main className="max-w-5xl mx-auto px-4">
         {/* Hero */}
@@ -102,6 +75,6 @@ export default function Home() {
       <div className="md:hidden fixed bottom-0 inset-x-0 bg-secondary p-3 flex justify-center shadow-lg">
         <a href="https://payhip.com/b/FS7uM" className="payhip-buy-button text-white font-semibold" data-theme="none" data-product="FS7uM">Start Now – $19.90</a>
       </div>
-    <ContactModal/></>
+    <ContactModal/>{contactOpen && <ContactModal onClose={()=>setContactOpen(false)}/>}</>
   )
 }
