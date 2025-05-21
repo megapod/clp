@@ -1,6 +1,6 @@
 {
-  "name": "connection-lines",
-  "version": "0.1.0",
+  "name": "connection-lines-public",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,13 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/react": "^18.0.0",
-    "@types/node": "^20.0.0"
+    "next": "14.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   }
 }
