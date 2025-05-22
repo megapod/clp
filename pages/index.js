@@ -54,8 +54,11 @@ const privacyHtml = `
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [showSupport, setShowSupport] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
+  const [showSupport, setShowSupport] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showSupport, setShowSupport] = useState(false);
 
   return (
     <main className="min-h-screen flex flex-col bg-lime-50 dark:bg-gray-900">
@@ -118,6 +121,21 @@ export default function Home() {
       )}
 
       {/* Footer */}
+      
+      {showSupport && (
+        <section id="support" className="mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10">
+          <h2 className="text-3xl font-bold mb-6 text-center">Contact / Support</h2>
+          <iframe
+            src="https://shop.connection-lines.com/contact"
+            title="Contact"
+            className="w-full h-[600px] border-0 rounded-md"
+          />
+          <div className="text-center mt-6">
+            <button onClick={() => setShowSupport(false)} className="underline text-teal-600 dark:text-teal-400">Hide</button>
+          </div>
+        </section>
+      )}
+
       <footer className="py-10 text-center text-sm text-gray-500 dark:text-gray-400">
         <button onClick={() => setShowPrivacy(!showPrivacy)} className="mx-2 hover:underline">Privacy</button>
         <button onClick={() => setShowTerms(!showTerms)} className="mx-2 hover:underline">Terms</button>
