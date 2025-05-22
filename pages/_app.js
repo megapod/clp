@@ -15,7 +15,7 @@ const toggle=()=>{const n=theme==='dark'?'light':'dark';setTheme(n);localStorage
 return(<>
   <Component {...pageProps}/>
   <CookieBanner/>
-  <button onClick={toggle} className="fixed top-4 right-4 bg-gray-200 dark:bg-gray-700 p-2 rounded-full shadow-md">
+  <button onClick={toggle} className="fixed top-4 right-4 bg-gray-300 dark:bg-gray-700 p-2 rounded-full shadow-md">
     {theme==='dark'?'🌙':'☀️'}
   </button>
 </>);
