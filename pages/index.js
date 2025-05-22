@@ -56,9 +56,7 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
-  const [showSupport, setShowSupport] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
-  const [showSupport, setShowSupport] = useState(false);
 
   return (
     <main className="min-h-screen flex flex-col bg-lime-50 dark:bg-gray-900">
