@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* Conditional Sections */}
       {showTerms && (
-        className="text-gray-900 mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10 dark:text-gray-100">
+  <section id="terms" className="text-gray-900 mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10 dark:text-gray-100">
           <h2 className="text-3xl font-bold mb-6 text-center">Terms of Use</h2>
           <div className="prose prose-slate max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: termsHtml }} />
           <div className="text-center mt-6">
@@ -56,7 +56,7 @@ export default function Home() {
         </section>
       )}
       {showPrivacy && (
-        className="text-gray-900 mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10 dark:text-gray-100">
+  <section id="privacy" className="text-gray-900 mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10 dark:text-gray-100">
           <h2 className="text-3xl font-bold mb-6 text-center">Privacy Policy</h2>
           <div className="prose prose-slate max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: privacyHtml }} />
           <div className="text-center mt-6">
@@ -65,7 +65,7 @@ export default function Home() {
         </section>
       )}
       {showSupport && (
-        className="text-gray-900 mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10 dark:text-gray-100">
+  <section id="support" className="text-gray-900 mx-auto max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-10 mt-10 dark:text-gray-100">
           <h2 className="text-3xl font-bold mb-6 text-center">Contact / Support</h2>
           <iframe
             src="https://shop.connection-lines.com/contact"
